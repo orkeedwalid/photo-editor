@@ -1,0 +1,297 @@
+/* Universal Styles for Editor Page */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Editor Page Wrapper for Centering - Applied only to the editor's body content */
+.editor-page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background: #f5f7fa; /* Default light background for editor */
+}
+
+/* Back Button */
+.back-button-container {
+  text-align: left;
+  margin-bottom: 20px;
+  width: 90%;
+  max-width: 950px;
+}
+.back-button {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin: 10px;
+  transition: background-color 0.3s ease;
+}
+.back-button:hover {
+  background-color: #45a049;
+}
+
+/* Main Editor Container */
+.container {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Softer, larger shadow */
+  width: 90%;
+  max-width: 950px;
+  padding: 25px; /* Slightly more padding */
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Increased gap */
+  align-items: center;
+}
+
+.editor {
+  display: flex;
+  gap: 25px; /* Increased gap */
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.img_box {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px; /* Ensure some height even without image */
+  background-color: #f0f0f0; /* Placeholder background */
+  border-radius: 8px;
+}
+
+.img_box img {
+  max-width: 100%;
+  max-height: 500px; /* Constrain image height */
+  border-radius: 8px;
+  display: none; /* Hidden until an image is loaded */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Shadow for the image */
+}
+
+.controls {
+  flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.upload input {
+  display: none;
+}
+
+.upload label {
+  background: #2196f3; /* Brighter blue for upload */
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 8px; /* More rounded */
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-weight: bold;
+  text-align: center;
+  display: block; /* Make it block to take full width */
+}
+
+.upload label:hover {
+  background: #1976d2;
+  transform: translateY(-2px);
+}
+
+.filters ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px; /* Increased gap */
+}
+
+.filters ul li {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Increased gap */
+}
+
+.filters label {
+  font-size: 15px;
+  color: #555; /* Slightly softer color */
+  font-weight: 500;
+}
+
+.filters input[type="range"] {
+  width: 100%;
+  accent-color: #2196f3; /* Blue accent */
+  height: 6px; /* Thinner slider track */
+  border-radius: 3px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+.filters input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #2196f3;
+  cursor: grab;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.filters input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #2196f3;
+  cursor: grab;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+
+.preset-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.preset-filters button {
+  padding: 10px 16px; /* Slightly larger buttons */
+  border: none;
+  border-radius: 8px; /* More rounded */
+  cursor: pointer;
+  background: #e0e0e0; /* Lighter background */
+  color: #333;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-weight: 500;
+}
+
+.preset-filters button:hover {
+  background: #c0c0c0;
+  transform: translateY(-2px);
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center; /* Center buttons */
+}
+
+.buttons button {
+  border: none;
+  padding: 12px 25px; /* Larger padding */
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Add shadow to buttons */
+}
+
+#reset {
+  background: #ea5443;
+  color: white;
+}
+#reset:hover {
+  background: #c24234;
+  transform: translateY(-2px);
+}
+#download {
+  background: #27ae60; /* Green */
+  color: white;
+}
+#download:hover {
+  background: #229a56;
+  transform: translateY(-2px);
+}
+#removeBg {
+  background: #f39c12; /* Orange */
+  color: white;
+}
+#removeBg:hover {
+  background: #e67e22;
+  transform: translateY(-2px);
+}
+#undo {
+  background: #9b59b6; /* Purple */
+  color: white;
+}
+#undo:hover {
+  background: #914ab0;
+  transform: translateY(-2px);
+}
+
+/* ==================================== */
+/* Dark Mode Overrides for Editor Page */
+/* ==================================== */
+body.dark-mode .editor-page-wrapper {
+  background: #1e1e1e;
+}
+body.dark-mode .container {
+  background: #2c2c2c;
+  color: #eee;
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.05);
+}
+body.dark-mode .filters label {
+  color: #ddd;
+}
+body.dark-mode .upload label {
+  background: #007bff; /* Darker blue for upload in dark mode */
+}
+body.dark-mode .upload label:hover {
+  background: #0056b3;
+}
+body.dark-mode #download {
+  background: #2196f3; /* Blue for download */
+}
+body.dark-mode #download:hover {
+  background: #1976d2;
+}
+body.dark-mode #reset {
+  background: #c0392b; /* Darker red */
+}
+body.dark-mode #reset:hover {
+  background: #a93226;
+}
+body.dark-mode #removeBg {
+  background: #e67e22; /* Darker orange */
+}
+body.dark-mode #removeBg:hover {
+  background: #d35400;
+}
+body.dark-mode #undo {
+  background: #8f49ac; /* Darker purple */
+}
+body.dark-mode #undo:hover {
+  background: #7c359d;
+}
+body.dark-mode .preset-filters button {
+  background: #555;
+  color: #eee;
+}
+body.dark-mode .preset-filters button:hover {
+  background: #777;
+}
+body.dark-mode .img_box {
+  background-color: #3a3a3a;
+}
+
+/* Media Queries for Editor Page */
+@media (max-width: 768px) {
+  .editor {
+    flex-direction: column;
+    align-items: center;
+  }
+  .controls {
+    width: 100%;
+  }
+}

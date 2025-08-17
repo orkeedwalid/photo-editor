@@ -1,0 +1,260 @@
+/* Global Reset & Font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Base Body Styles for General Pages */
+body {
+    background-color: #f4f4f9; /* Light background for general pages */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex; /* Flexbox for centering content on auth/home pages */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack content vertically */
+    position: relative; /* For absolute positioning of theme button */
+    color: #333; /* Default text color */
+}
+
+/* General Link Styles */
+a {
+    text-decoration: none;
+    color: #4a90e2; /* Default link color */
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #357ab7; /* Darker link color on hover */
+}
+
+/* ==================================== */
+/* Theme Toggle Button Styling (Global Position for Home Page Only) */
+/* ==================================== */
+/* This class will be applied to the div wrapping the button */
+.top-left-container {
+    position: absolute;
+    top: 20px; /* Slightly more space from top */
+    left: 20px; /* Slightly more space from left */
+    z-index: 1000;
+}
+
+/* Style for the button itself */
+#toggleTheme {
+    background: #444; /* Dark gray button */
+    color: white;
+    border: none;
+    padding: 10px 20px; /* Larger padding for a nicer look */
+    border-radius: 8px; /* More rounded corners */
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    font-weight: 500;
+    font-size: 16px; /* Slightly larger font */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Softer shadow */
+}
+
+#toggleTheme:hover {
+    background: #666; /* Lighter gray on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* ==================================== */
+/* Authentication Container (for Login and Register pages) */
+/* ==================================== */
+.auth-container {
+    max-width: 450px; /* Slightly wider */
+    width: 90%;
+    padding: 40px; /* More padding */
+    background-color: #fff;
+    border-radius: 15px; /* More rounded */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Stronger, softer shadow */
+    text-align: center;
+    margin-top: 50px; /* Adjust margin to accommodate button space */
+    margin-bottom: 50px;
+}
+
+.auth-container h2 {
+    margin-bottom: 30px; /* Increased margin */
+    color: #333;
+    font-size: 32px; /* Larger heading */
+    font-weight: 700;
+}
+
+.auth-container input {
+    width: 100%;
+    padding: 16px; /* More padding */
+    margin: 15px 0; /* More vertical margin */
+    border-radius: 10px; /* More rounded */
+    border: 1px solid #e0e0e0; /* Lighter border */
+    font-size: 18px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05); /* Inner shadow */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-container input:focus {
+    border-color: #4a90e2; /* Highlight on focus */
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.25);
+}
+
+.auth-container button {
+    width: 100%;
+    padding: 18px; /* More padding */
+    border: none;
+    border-radius: 10px;
+    background-color: #4a90e2; /* Blue button */
+    color: white;
+    font-size: 20px; /* Larger font */
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 30px; /* More margin */
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15); /* Button shadow */
+}
+
+.auth-container button:hover {
+    background-color: #357ab7; /* Darker blue on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* ==================================== */
+/* Home Page Container */
+/* ==================================== */
+.home-container {
+    max-width: 900px;
+    width: 90%; /* Responsive width */
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center; /* Center content within container */
+    margin-top: 50px; /* Adjust margin to accommodate button space */
+    margin-bottom: 50px;
+}
+
+.home-container h2 {
+    font-size: 36px; /* Larger heading */
+    color: #333;
+    margin-bottom: 40px; /* More spacing */
+    font-weight: 700;
+}
+
+.home-links {
+    margin: 30px 0; /* More margin */
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* More space between buttons */
+    flex-wrap: wrap;
+}
+
+.home-links .btn {
+    display: inline-block;
+    padding: 15px 30px; /* Larger padding */
+    background-color: #28a745; /* Green button for Go to Editor */
+    color: white;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.home-links .btn:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* Separate Logout button style for clarity */
+.home-links .btn[href*="logout"] {
+    background-color: #e45564; /* Red for logout */
+}
+
+.home-links .btn[href*="logout"]:hover {
+    background-color: #c82333;
+}
+
+
+/* ==================================== */
+/* Dark Mode Overrides for General Pages */
+/* ==================================== */
+body.dark-mode {
+    background: #1e1e1e; /* Dark background */
+    color: #eee; /* Light text color */
+}
+
+body.dark-mode .auth-container,
+body.dark-mode .home-container {
+    background: #2c2c2c; /* Darker container background */
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05); /* Lighter shadow for dark mode */
+}
+
+body.dark-mode .auth-container h2,
+body.dark-mode .home-container h2 {
+    color: #eee; /* Light headings */
+}
+
+body.dark-mode .auth-container input {
+    background: #444; /* Dark input background */
+    border: 1px solid #555; /* Darker input border */
+    color: #f4f4f9; /* Light input text */
+}
+
+body.dark-mode .auth-container input::placeholder {
+    color: #aaa; /* Lighter placeholder text */
+}
+
+body.dark-mode .auth-container button,
+body.dark-mode .home-links .btn {
+    background-color: #007bff; /* Blue for buttons in dark mode */
+}
+body.dark-mode .auth-container button:hover,
+body.dark-mode .home-links .btn:hover {
+    background-color: #0056b3;
+}
+
+body.dark-mode a {
+    color: #8ab4f8; /* Lighter link color */
+}
+
+body.dark-mode a:hover {
+    color: #6a95e2; /* Even lighter link color on hover */
+}
+
+/* Dark Mode specific style for the theme toggle button */
+body.dark-mode #toggleTheme {
+  background: #007bff; /* Blue background for dark mode button */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+body.dark-mode #toggleTheme:hover {
+  background: #0056b3;
+}
+
+/* Media Queries for General Pages */
+@media (max-width: 768px) {
+    .auth-container, .home-container {
+        margin: 30px auto;
+        padding: 20px;
+        width: 95%;
+    }
+    .auth-container h2, .home-container h2 {
+        font-size: 24px;
+    }
+    .auth-container input, .auth-container button, .home-links .btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .top-left-container {
+        top: 10px;
+        left: 10px;
+    }
+    #toggleTheme {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Photo Editor{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<style>
+    /* Hide the theme toggle button on the editor page */
+    body #global-theme-toggle-wrapper {
+        display: none;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="editor-page-wrapper">
+    <div class="back-button-container">
+        <a href="{% url 'home' %}" class="back-button">&#8592; Home</a>
+    </div>
+    <div class="container">
+        <div class="img_box">
+            <img id="img" alt="Your Image">
+        </div>
+
+        <div class="controls">
+            <div class="upload">
+                <label for="upload">Upload Image</label>
+                <input type="file" id="upload" accept="image/*">
+            </div>
+
+            <div class="filters">
+                <ul>
+                    <li><label for="saturate">Saturate</label><input type="range" id="saturate" min="0" max="200" value="100"></li>
+                    <li><label for="contrast">Contrast</label><input type="range" id="contrast" min="0" max="200" value="100"></li>
+                    <li><label for="brightness">Brightness</label><input type="range" id="brightness" min="0" max="200" value="100"></li>
+                    <li><label for="sepia">Sepia</label><input type="range" id="sepia" step="0.1" min="0" max="1" value="0"></li>
+                    <li><label for="grayscale">Grayscale</label><input type="range" id="grayscale" step="0.1" min="0" max="1" value="0"></li>
+                    <li><label for="blur">Blur</label><input type="range" id="blur" step="0.1" min="0" max="10" value="0"></li>
+                    <li><label for="hue">Hue</label><input type="range" id="hue" min="0" max="350" value="0"></li>
+                </ul>
+            </div>
+
+            <div class="preset-filters">
+                <button onclick="applyPreset('B&W')">B&W</button>
+                <button onclick="applyPreset('Warm')">Warm</button>
+                <button onclick="applyPreset('Cool')">Cool</button>
+                <button onclick="applyPreset('Vintage')">Vintage</button>
+                <button onclick="applyPreset('Pop')">Pop</button>
+                <button onclick="applyPreset('Bright')">Bright</button>
+                <button onclick="applyPreset('Soft')">Soft</button>
+                <button onclick="applyPreset('Contrasty')">Contrasty</button>
+            </div>
+
+            <div class="buttons">
+                <button id="reset">Reset</button>
+                <button id="undo">Undo</button>
+                <button id="download">Download</button>
+                <button id="removeBg">Remove Background</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

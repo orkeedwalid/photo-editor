@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'style2.css' %}">
+<style>
+    /* Show the theme toggle button on the home page */
+    body #global-theme-toggle-wrapper {
+        display: block;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="home-container">
+  <h2>Welcome {{ request.user.username }}</h2>
+  <div class="home-links">
+    <a href="{% url 'logout' %}" class="btn">Logout</a>
+    <a href="{% url 'editor' %}" class="btn">Go to Photo Editor</a>
+  </div>
+</div>
+{% endblock %}
